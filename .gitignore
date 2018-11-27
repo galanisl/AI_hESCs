@@ -2,3 +2,4 @@ not_for_git
 not_for_git/*
 .DS_Store
 .Rhistory
+.gitignore

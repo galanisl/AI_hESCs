@@ -266,7 +266,7 @@ The scripts that we describe below require the following directory structure:
     -   A folder called `fastqc_trimmed` to the output of FastQC for trimmed FastQ files.
     -   A folder called `tx_quantification` to store the output transcript expression quantification for each study.
 -   A directory called `ref_transcriptome` to store the the human reference transcriptome, the transcriptome index and the transcript-to-gene conversion tables.
--   A directory calle `results` to store intermediate files and datasets.
+-   A directory called `results` to store intermediate files and datasets.
 
 Data processing and quality control
 -----------------------------------

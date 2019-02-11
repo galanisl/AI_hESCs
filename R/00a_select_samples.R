@@ -1,4 +1,7 @@
 
+# This script selects the Epi and PE samples from the Petropoulos et al. study
+# using sample annotations from Stirparo et al. (2018) Development
+
 library(dplyr)
 
 # Read the sample meta-data

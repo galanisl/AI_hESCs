@@ -16,8 +16,10 @@ perform_pca <- function(X, pval = 0.001, top_pc = 5){
 }
 
 # Plot 2D PCA for the given pca object, the given components pc1, pc2, and the
-# given colour palette and title. Points are coloured by condition cond.
-plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, ptitle){
+# given colour palette, shape palette and title. Points are coloured by 
+# condition cond.
+plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, 
+                     shape_pal, ptitle){
   
   res <- tibble(x = pca$ind$coord[, pc1], y = pca$ind$coord[, pc2], 
                 cond = cond)
@@ -28,6 +30,7 @@ plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, ptitle)
   p_pca <- ggplot(res, aes(x, y, colour = cond)) + 
     geom_point(size = 2.5) +
     scale_colour_manual(values = col_pal) + 
+    scale_shape_manual(values = shape_pal) +
     labs(x = paste0("PC", pc1, " (", pc1_var, "%)"), 
          y = paste0("PC", pc2, " (", pc2_var, "%)"),
          title = paste0(ptitle, " (n = ", nrow(pca$var$coord),
@@ -38,8 +41,10 @@ plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, ptitle)
 }
 
 # Plot 2D t-SNE for the given t-SNE object, the given dimensions d1, d2, and the
-# given colour palette and title. Points are coloured by condition cond.
-plot_tsne <- function(tsf, cond, d1 = 1, d2 = 2, pval = 0.001, ntop, col_pal, ptitle){
+# given colour palette, shape palette and title. Points are coloured by 
+# condition cond.
+plot_tsne <- function(tsf, cond, d1 = 1, d2 = 2, pval = 0.001, ntop, col_pal, 
+                      shape_pal, ptitle){
   
   res_ts <- tibble(x = tsf$Y[, d1], y = tsf$Y[, d2], cond = cond)
   

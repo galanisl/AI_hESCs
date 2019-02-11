@@ -50,28 +50,39 @@ stype <- stype %>%
          cell_line = parse_factor(cell_line, NULL),
          medium = parse_factor(medium, NULL))
 
-col_pal <- c("#4d9221", "#7fbc41", "#a6d96a", #Epi
-             "#9e9ac8", "#6a51a3", #PE
+col_pal <- c("#7fbc41", "#7fbc41", "#7fbc41", #Epi
+             "#6a51a3", "#6a51a3", #PE
              "#C19A6B", #TE
-             "#a50026", "#d73027", "#f46d43", "#fdae61", #AI
-             "#f1b6da", "#de77ae", #mTeSR1
-             "#1f78b4", "#6baed6", "#41b6c4", "#1d91c0", "#225ea8", "#7fcdbb", #KSR
-             "#d9d9d9", "#bdbdbd", "#969696", "#737373", 
-             "#525252", "#464646", "#252525", "#101010", "#000000" #Naive
-             )
+             "#d73027", "#d73027", "#d73027", "#d73027", #AI
+             "#de75ae", "#de75ae", #mTeSR1
+             "#1f78b4", "#1f78b4", "#1f78b4", "#1f78b4", "#1f78b4", "#9ecae1", #KSR
+             "#737373", "#737373", "#737373", "#737373", 
+             "#737373", "#737373", "#737373", "#737373", "#737373" #Naive
+)
+
+shape_pal <- c(16, 17, 15, #Epi
+               16, 17, #PE
+               16, #TE
+               16, 17, 15, 18, #AI
+               16, 17, #mTeSR1
+               16, 16, 17, 15, 18, 16, #KSR
+               16, 17, 17, 15, 
+               18, 18, 17, 15, 18 #Naive
+)
 
 # Putting all the data together
 dds <- DESeqDataSetFromTximport(txi = hesc, colData = stype, 
                                 design = ~ exp_group)
 
-# Removal of mitochondrial-, ribosomal- and pseudo-genes
+# Removal of mitochondrial-, ribosomal- and pseudo-genes.
+# The reference files are in folder 'report' on GitHub
 mito <- grep("^MT-", rownames(dds))
 dds <- dds[-mito, ]
 
-ribo <- read_tsv("../hESC_project/ref_transcriptome/ribosomal.txt")
+ribo <- read_tsv("ref_transcriptome/ribosomal.txt")
 dds <- dds[!(rownames(dds) %in% ribo$`Approved Symbol`), ]
 
-load("../hESC_project/ref_transcriptome/t2g_complete.RData")
+load("ref_transcriptome/t2g_complete.RData")
 pseudo <- t2g[grep("pseudogene", t2g$gene_biotype), ]
 dds <- dds[!(rownames(dds) %in% pseudo$symbol), ]
 
@@ -119,7 +130,8 @@ pairs(pca_wbe$ind$coord, col = factor(stype$technology),
 legend("right", fill = unique(factor(stype$technology)), 
        legend = unique(stype$technology))
 
-plot_pca(pca_wbe, stype$sample_type, 1, 2, pval, col_pal, "Before batch effect removal")
+plot_pca(pca_wbe, stype$sample_type, 1, 2, pval, col_pal, shape_pal, 
+         "Before batch effect removal")
 
 # Batch effect removal ----------------------------------------------------
 
@@ -147,12 +159,12 @@ legend("right", fill = unique(factor(stype$technology)),
        legend = unique(stype$technology))
 
 p <- list()
-p[[1]] <- plot_pca(pca_nbe, stype$sample_type, 1, 2, pval, col_pal, 
+p[[1]] <- plot_pca(pca_nbe, stype$sample_type, 1, 2, pval, col_pal, shape_pal,
                    "After batch effect removal") + theme(legend.position = "none")
 p[[2]] <- ggplot()
-p[[3]] <- plot_pca(pca_nbe, stype$sample_type, 1, 3, pval, col_pal, 
+p[[3]] <- plot_pca(pca_nbe, stype$sample_type, 1, 3, pval, col_pal, shape_pal,
                    "After batch effect removal") + theme(legend.position = "none")
-p[[4]] <- plot_pca(pca_nbe, stype$sample_type, 2, 3, pval, col_pal, 
+p[[4]] <- plot_pca(pca_nbe, stype$sample_type, 2, 3, pval, col_pal, shape_pal,
                    "After batch effect removal") + theme(legend.position = "none")
 plot_grid(plotlist = p, nrow = 2, ncol = 2)
 
@@ -201,14 +213,14 @@ for(i in 1:100){
 
 p <- list()
 p[[1]] <- plot_tsne(tsf, stype$sample_type, d1 = 1, d2 = 2, pval = pval, ntop, 
-                    col_pal, "After batch effect removal") + 
+                    col_pal, shape_pal, "After batch effect removal") + 
   theme(legend.position = "none")
 p[[2]] <- ggplot()
 p[[3]] <- plot_tsne(tsf, stype$sample_type, d1 = 1, d2 = 3, pval = pval, ntop, 
-                    col_pal, "After batch effect removal") + 
+                    col_pal, shape_pal, "After batch effect removal") + 
   theme(legend.position = "none")
 p[[4]] <- plot_tsne(tsf, stype$sample_type, d1 = 2, d2 = 3, pval = pval, ntop, 
-                    col_pal, "After batch effect removal") + 
+                    col_pal, shape_pal, "After batch effect removal") + 
   theme(legend.position = "none")
 plot_grid(plotlist = p, nrow = 2, ncol = 2)
 

@@ -1,4 +1,7 @@
 
+# This scripts converts transcript IDs to Ensembl gene IDs and official gene
+# symbol with the biomaRt tool
+
 library(biomaRt)
 library(dplyr)
 

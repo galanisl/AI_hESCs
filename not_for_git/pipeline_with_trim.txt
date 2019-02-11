@@ -1,0 +1,47 @@
+* This pipeline assumes that Anaconda Python is installed in the computer.
+
+- Install FastQC:
+	conda install -c bioconda fastqc
+- Run FastQC on the original fastq files:
+	fastqc fastq_raw/*.fastq.gz --outdir fastqc_raw
+- Install multiqc
+	conda install -c bioconda multiqc
+- Run multiqc to integrate the quality control reports:
+	multiqc fastqc_raw/ -n multiqc_raw
+- Install cutadapt:
+	conda install -c bioconda cutadapt
+- Download Trim Galore! from https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
+- Make sure that trim_galore is executable, if not, add the +x bit:
+	ls -alh
+   chmod +x trim_galore
+- Add the location of trim_galore to the path:
+	vi .bashrc
+	*Add the path to trim_galore with
+	export PATH="/home/gal/Documents/TrimGalore-0.5.0/:$PATH"
+- Make sure parallel is installed, if not, install it:
+	parallel --version
+	sudo apt install parallel   
+- Run trim_galore over the paired_end reads in parallel:
+	find fastq_raw -name "*_R1_001.fastq.gz" | parallel -j 20 trim_galore --paired -o fastq_trimmed/ {} '{= s/R1/R2/ =}'
+- Run FastQC on the trimmed fastq files:
+	fastqc fastq_trimmed/*.fq.gz --outdir fastqc_trimmed
+- Run multiqc to integrate the quality control reports:
+	multiqc fastqc_trimmed/ -n multiqc_trimmed
+- If all the fastq files pass the quality controls, we can move to quantification.
+- Download the reference transcriptome for human:
+	ftp://ftp.ensembl.org/pub/release-93/fasta/homo_sapiens/cdna/
+- Download salmon binary
+- Process the transcriptome file to create a transcriptome index:
+	~/Documents/salmon-0.11.3-linux_x86_64/bin/salmon index -t ref_transcriptome/Homo_sapiens.GRCh38.cdna.all.fa.gz -i ref_transcriptome/salmon_index --type quasi -k 31
+- Quantify gene expression per sample using the self-written salmon_quant bash script:
+	sh salmon_quant.sh
+
+- Construct a transcriptID-2-geneID map for gene-level summarisation:
+	tx2gene.R
+- Estimate gene-level counts with tximport:
+	gene_level_counts.R
+
+
+* Main Ensembl download page: https://www.ensembl.org/info/data/ftp/index.html
+
+	

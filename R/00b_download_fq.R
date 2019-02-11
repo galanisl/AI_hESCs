@@ -1,4 +1,10 @@
 
+# This script must be run from the bash terminal as follows:
+#   Rscript 00b_download_fq.R sample_data.tsv fastq_raw
+# The first argument must be a tab-separated file and contain a column called
+# fastq_ftp with the FTP address of the samples' FastQ files. The second 
+# argument is the name of the folder where these files will be downloaded.
+
 library(dplyr)
 
 args <- commandArgs(trailingOnly = TRUE)

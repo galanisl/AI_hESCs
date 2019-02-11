@@ -1,0 +1,25 @@
+- Go to the ENA page for this experiment (E-MTAB-3929):
+	https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-3929/ then go to links
+	and click the ENA link or...
+	https://www.ebi.ac.uk/ena/data/view/PRJEB11202
+
+- Select the Run accession, Tax ID, Scientific name, Instrument model, Library
+layout, FASTQ files (FTP) and Sample title columns and download the resulting
+table in text format.
+
+- Generate an intermediate file with the samples of interest running:
+	Rscript 00a_select_samples.R
+
+- Download the FASTQ files for the samples of interest with:
+	Rscript 00b_download_fq.R sample_data.tsv fastq_raw
+
+- Run FastQC on the original fastq files:
+	fastqc fastq_raw/*.fq.gz --outdir fastqc_raw
+
+- Run multiqc to integrate the quality control reports:
+	multiqc fastqc_raw/ -n multiqc_raw
+
+- Quantify gene expression per sample using the self-written salmon_quant bash script:
+	sh salmon_quant.sh
+	
+	

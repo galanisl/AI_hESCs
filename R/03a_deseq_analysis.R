@@ -17,9 +17,9 @@ dds <- DESeqDataSetFromTximport(txi = hesc, colData = stype,
 
 mito <- grep("^MT-", rownames(dds))
 dds <- dds[-mito, ]
-ribo <- read_tsv("../hESC_project/ref_transcriptome/ribosomal.txt")
+ribo <- read_tsv("ref_transcriptome/ribosomal.txt")
 dds <- dds[!(rownames(dds) %in% ribo$`Approved Symbol`), ]
-load("../hESC_project/ref_transcriptome/t2g_complete.RData")
+load("ref_transcriptome/t2g_complete.RData")
 pseudo <- t2g[grep("pseudogene", t2g$gene_biotype), ]
 dds <- dds[!(rownames(dds) %in% pseudo$symbol), ]
 dds <- dds[!near(rowSums(counts(dds)), 0), ]

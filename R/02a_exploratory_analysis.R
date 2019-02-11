@@ -142,12 +142,8 @@ pairs(pca_wbe$ind$coord, col = factor(stype$technology),
 legend("right", fill = unique(factor(stype$technology)), 
        legend = unique(stype$technology))
 
-<<<<<<< HEAD
 plot_pca(pca_wbe, stype$sample_type, 1, 2, pval, col_pal, shape_pal, 
          "Before batch effect removal")
-=======
-plot_pca(pca_wbe, stype$sample_type, 1, 2, pval, col_pal, "Before batch effect removal")
->>>>>>> e1a244ea72e6fc0478d258ff4d5ff9198c8dc9b2
 
 # Batch effect removal ----------------------------------------------------
 
@@ -175,21 +171,12 @@ legend("right", fill = unique(factor(stype$technology)),
        legend = unique(stype$technology))
 
 p <- list()
-<<<<<<< HEAD
 p[[1]] <- plot_pca(pca_nbe, stype$sample_type, 1, 2, pval, col_pal, shape_pal,
                    "After batch effect removal") + theme(legend.position = "none")
 p[[2]] <- ggplot()
 p[[3]] <- plot_pca(pca_nbe, stype$sample_type, 1, 3, pval, col_pal, shape_pal,
                    "After batch effect removal") + theme(legend.position = "none")
 p[[4]] <- plot_pca(pca_nbe, stype$sample_type, 2, 3, pval, col_pal, shape_pal,
-=======
-p[[1]] <- plot_pca(pca_nbe, stype$sample_type, 1, 2, pval, col_pal, 
-                   "After batch effect removal") + theme(legend.position = "none")
-p[[2]] <- ggplot()
-p[[3]] <- plot_pca(pca_nbe, stype$sample_type, 1, 3, pval, col_pal, 
-                   "After batch effect removal") + theme(legend.position = "none")
-p[[4]] <- plot_pca(pca_nbe, stype$sample_type, 2, 3, pval, col_pal, 
->>>>>>> e1a244ea72e6fc0478d258ff4d5ff9198c8dc9b2
                    "After batch effect removal") + theme(legend.position = "none")
 plot_grid(plotlist = p, nrow = 2, ncol = 2)
 
@@ -238,7 +225,6 @@ for(i in 1:100){
 
 p <- list()
 p[[1]] <- plot_tsne(tsf, stype$sample_type, d1 = 1, d2 = 2, pval = pval, ntop, 
-<<<<<<< HEAD
                     col_pal, shape_pal, "After batch effect removal") + 
   theme(legend.position = "none")
 p[[2]] <- ggplot()
@@ -247,17 +233,8 @@ p[[3]] <- plot_tsne(tsf, stype$sample_type, d1 = 1, d2 = 3, pval = pval, ntop,
   theme(legend.position = "none")
 p[[4]] <- plot_tsne(tsf, stype$sample_type, d1 = 2, d2 = 3, pval = pval, ntop, 
                     col_pal, shape_pal, "After batch effect removal") + 
-=======
-                    col_pal, "After batch effect removal") + 
   theme(legend.position = "none")
-p[[2]] <- ggplot()
-p[[3]] <- plot_tsne(tsf, stype$sample_type, d1 = 1, d2 = 3, pval = pval, ntop, 
-                    col_pal, "After batch effect removal") + 
-  theme(legend.position = "none")
-p[[4]] <- plot_tsne(tsf, stype$sample_type, d1 = 2, d2 = 3, pval = pval, ntop, 
-                    col_pal, "After batch effect removal") + 
->>>>>>> e1a244ea72e6fc0478d258ff4d5ff9198c8dc9b2
-  theme(legend.position = "none")
+
 plot_grid(plotlist = p, nrow = 2, ncol = 2)
 
 res_ts <- tibble(x = tsf$Y[, 1], y = tsf$Y[, 2], z = tsf$Y[, 3],

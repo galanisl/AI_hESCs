@@ -16,15 +16,10 @@ perform_pca <- function(X, pval = 0.001, top_pc = 5){
 }
 
 # Plot 2D PCA for the given pca object, the given components pc1, pc2, and the
-<<<<<<< HEAD
 # given colour palette, shape palette and title. Points are coloured by 
 # condition cond.
 plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, 
                      shape_pal, ptitle){
-=======
-# given colour palette and title. Points are coloured by condition cond.
-plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, ptitle){
->>>>>>> e1a244ea72e6fc0478d258ff4d5ff9198c8dc9b2
   
   res <- tibble(x = pca$ind$coord[, pc1], y = pca$ind$coord[, pc2], 
                 cond = cond)
@@ -32,13 +27,10 @@ plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, ptitle)
   pc1_var <- round(pca$eig[pc1, "percentage of variance"],1)
   pc2_var <- round(pca$eig[pc2, "percentage of variance"],1)
   
-  p_pca <- ggplot(res, aes(x, y, colour = cond)) + 
+  p_pca <- ggplot(res, aes(x, y, colour = cond, shape = cond)) + 
     geom_point(size = 2.5) +
     scale_colour_manual(values = col_pal) + 
-<<<<<<< HEAD
     scale_shape_manual(values = shape_pal) +
-=======
->>>>>>> e1a244ea72e6fc0478d258ff4d5ff9198c8dc9b2
     labs(x = paste0("PC", pc1, " (", pc1_var, "%)"), 
          y = paste0("PC", pc2, " (", pc2_var, "%)"),
          title = paste0(ptitle, " (n = ", nrow(pca$var$coord),
@@ -49,21 +41,17 @@ plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, ptitle)
 }
 
 # Plot 2D t-SNE for the given t-SNE object, the given dimensions d1, d2, and the
-<<<<<<< HEAD
 # given colour palette, shape palette and title. Points are coloured by 
 # condition cond.
 plot_tsne <- function(tsf, cond, d1 = 1, d2 = 2, pval = 0.001, ntop, col_pal, 
                       shape_pal, ptitle){
-=======
-# given colour palette and title. Points are coloured by condition cond.
-plot_tsne <- function(tsf, cond, d1 = 1, d2 = 2, pval = 0.001, ntop, col_pal, ptitle){
->>>>>>> e1a244ea72e6fc0478d258ff4d5ff9198c8dc9b2
   
   res_ts <- tibble(x = tsf$Y[, d1], y = tsf$Y[, d2], cond = cond)
   
-  p_tsne <- ggplot(res_ts, aes(x, y, colour = cond)) + 
+  p_tsne <- ggplot(res_ts, aes(x, y, colour = cond, shape = cond)) + 
     geom_point(size = 2.5) +
     scale_colour_manual(values = col_pal) + 
+    scale_shape_manual(values = shape_pal) +
     labs(x = paste0("t-SNE", d1), 
          y = paste0("t-SNE", d2), 
          title = paste0("After batch effect removal (n = ", ntop, 

@@ -402,7 +402,7 @@ For more details about this section see `03a_deseq_analysis.R` at <https://githu
 Availability of the data
 ------------------------
 
-This pipeline is accompanied by `SummarizedExperiment` objects derived from processing of the FastQ files from all samples in Table 1. The files containing the objects can be downloaded from XXX.
+This pipeline is accompanied by a `SummarizedExperiment` object derived from processing of the FastQ files from all samples in Table 1. The file containing the object is in the `data` folder of this repository.
 
 References
 ----------

@@ -202,7 +202,7 @@ normalised data, we assumed that the trend fitted to the mean-variance curve
 shown in Figure 2 represents the technical component of the variance. Expression
 values that significantly deviate from this reference correspond to HVGs 
 [@scran]. The application of functions `trendVar()` and `decomposeVar()` from 
-`scran` [@scran] led us to 3312 HVGs at the significance level $\alpha = 0.001$ 
+`scran` [@scran] led us to 3312 HVGs at the significance level $\alpha = 0.01$ 
 after Benjamini-Hochberg correction.
 
 Principal Component Analysis (PCA) of the normalised samples revealed two 
@@ -220,7 +220,7 @@ paired-end).
 To remove these confounding factors from our data, we employed `limma`'s 
 `removeBatchEffect()` function [@limma]. The application of functions 
 `trendVar()` and `decomposeVar()` from `scran` [@scran] to the corrected data 
-led us to 3553 HVGs at the significance level $\alpha = 0.001$ 
+led us to 3553 HVGs at the significance level $\alpha = 0.01$ 
 after Benjamini-Hochberg correction. The PCAs of Figures 5 and 6 show how the 
 data was successfully adjusted.
 

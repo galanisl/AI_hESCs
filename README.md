@@ -349,7 +349,7 @@ To make count data more normally distributed, we used `DESeq2`'s size factor nor
 
 ![**Figure 2.** Relationship between the average normalised counts of a gene across samples and its variance. Each point is a gene.](report/figs/sfn_avg_var.png)
 
-To identify highly variable genes (HVGs) for dimensionality reduction of the normalised data, we assumed that the trend fitted to the mean-variance curve shown in Figure 2 represents the technical component of the variance. Expression values that significantly deviate from this reference correspond to HVGs \[7\]. The application of functions `trendVar()` and `decomposeVar()` from `scran` \[7\] led us to 3312 HVGs at the significance level *α* = 0.001 after Benjamini-Hochberg correction.
+To identify highly variable genes (HVGs) for dimensionality reduction of the normalised data, we assumed that the trend fitted to the mean-variance curve shown in Figure 2 represents the technical component of the variance. Expression values that significantly deviate from this reference correspond to HVGs \[7\]. The application of functions `trendVar()` and `decomposeVar()` from `scran` \[7\] led us to 3312 HVGs at the significance level *α* = 0.01 after Benjamini-Hochberg correction.
 
 Principal Component Analysis (PCA) of the normalised samples revealed two strong confounding factors related to the RNA-seq technology and layout used by each study. Figure 3 shows how the second principal component (PC2) captures whether the samples were sequenced in bulk or at the single cell level. Figure 4 highlights that PC5 splits the samples by RNA-seq layout (single-read or paired-end).
 
@@ -357,7 +357,7 @@ Principal Component Analysis (PCA) of the normalised samples revealed two strong
 
 ![**Figure 4.** First 5 principal components showing the relationship between samples (see Table 1) and the RNA-seq layout used to sequence them.](report/figs/pca_wbe2.png)
 
-To remove these confounding factors from our data, we employed `limma`'s `removeBatchEffect()` function \[8\]. The application of functions `trendVar()` and `decomposeVar()` from `scran` \[7\] to the corrected data led us to 3553 HVGs at the significance level *α* = 0.001 after Benjamini-Hochberg correction. The PCAs of Figures 5 and 6 show how the data was successfully adjusted.
+To remove these confounding factors from our data, we employed `limma`'s `removeBatchEffect()` function \[8\]. The application of functions `trendVar()` and `decomposeVar()` from `scran` \[7\] to the corrected data led us to 3553 HVGs at the significance level *α* = 0.01 after Benjamini-Hochberg correction. The PCAs of Figures 5 and 6 show how the data was successfully adjusted.
 
 ![**Figure 5.** First 5 principal components showing that the batch effect introduced by the type of RNA-seq was successfully removed by `limma::removeBatchEffect()`.](report/figs/pca_nbe1.png)
 

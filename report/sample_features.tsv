@@ -1,0 +1,215 @@
+sample_name	cell_line	medium	rna_seq	technology	batch	ENA_study_ID
+ERR1042010	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042012	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042013	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042014	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042016	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042018	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042019	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042313	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042038	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042049	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042081	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042084	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042092	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042199	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042201	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042226	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042414	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042415	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042416	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042418	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042419	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042446	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042455	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042457	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042480	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042349	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042351	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042358	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042359	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042371	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042372	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042376	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042401	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042403	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042616	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042769	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042802	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042803	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042808	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042819	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042848	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042853	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042855	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042867	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042869	Epi	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042314	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042037	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042045	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042007	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042008	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042009	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042021	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042025	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042420	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042429	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042430	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042431	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042432	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042433	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042435	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042443	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042445	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042458	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042464	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042467	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042468	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042469	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042477	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042479	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042489	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042490	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042491	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042492	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042817	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1042851	PE	none	single_cell	single_read	petropoulos	PRJEB11202
+ERR1924222	H9	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924223	H9	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924224	H9	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924225	H9	t2iL+Go+Y	bulk	single_read	guo	PRJEB20388
+ERR1924226	H9	t2iL+Go+Y	bulk	single_read	guo	PRJEB20388
+ERR1924227	H9	t2iL+Go+Y	bulk	single_read	guo	PRJEB20388
+ERR1924243	HNES1	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924244	HNES1	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924245	HNES1	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924240	HNES1	t2iL+Go FF	bulk	single_read	guo	PRJEB20388
+ERR1924241	HNES1	t2iL+Go FF	bulk	single_read	guo	PRJEB20388
+ERR1924242	HNES1	t2iL+Go FF	bulk	single_read	guo	PRJEB20388
+ERR1924246	Shef6	KSR/FGF	bulk	single_read	guo	PRJEB20388
+ERR1924247	Shef6	KSR/FGF	bulk	single_read	guo	PRJEB20388
+ERR1924248	Shef6	KSR/FGF	bulk	single_read	guo	PRJEB20388
+ERR1924228	Shef6	t2iL+Go FF	bulk	single_read	guo	PRJEB20388
+ERR1924229	Shef6	t2iL+Go FF	bulk	single_read	guo	PRJEB20388
+ERR1924230	Shef6	t2iL+Go FF	bulk	single_read	guo	PRJEB20388
+ERR1924231	Shef6_p18	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924232	Shef6_p18	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924234	Shef6_p26	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924235	Shef6_p26	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR1924236	Shef6_p26	t2iL+Go	bulk	single_read	guo	PRJEB20388
+ERR590408	H9	KSR/FGF	bulk	paired_end	takashima	PRJEB7132
+ERR590410	H9	KSR/FGF	bulk	paired_end	takashima	PRJEB7132
+ERR590401	H9	KSR/FGF	bulk	paired_end	takashima	PRJEB7132
+ERR590400	H9	t2iL+Go	bulk	paired_end	takashima	PRJEB7132
+ERR590398	H9	t2iL+Go	bulk	paired_end	takashima	PRJEB7132
+ERR590399	H9	t2iL+Go	bulk	paired_end	takashima	PRJEB7132
+GSM922224	Derived_p0	KSR/FBS+FGF	single_cell	single_read	yan	PRJNA153427
+GSM922225	Derived_p0	KSR/FBS+FGF	single_cell	single_read	yan	PRJNA153427
+GSM922226	Derived_p0	KSR/FBS+FGF	single_cell	single_read	yan	PRJNA153427
+GSM922227	Derived_p0	KSR/FBS+FGF	single_cell	single_read	yan	PRJNA153427
+GSM922228	Derived_p0	KSR/FBS+FGF	single_cell	single_read	yan	PRJNA153427
+GSM922230	Derived_p0	KSR/FBS+FGF	single_cell	single_read	yan	PRJNA153427
+GSM922250	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922251	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922252	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922253	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922254	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922255	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922256	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922257	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922258	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922259	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922260	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922261	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922262	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922263	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922264	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922265	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922266	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922267	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922268	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922269	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922270	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922271	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922272	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922273	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922274	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922275	Derived_p10	KSR/FBS+FGF+L	single_cell	single_read	yan	PRJNA153427
+GSM922207	Epi	none	single_cell	single_read	yan	PRJNA153427
+GSM922208	Epi	none	single_cell	single_read	yan	PRJNA153427
+GSM922216	Epi	none	single_cell	single_read	yan	PRJNA153427
+GSM922219	Epi	none	single_cell	single_read	yan	PRJNA153427
+GSM922220	Epi	none	single_cell	single_read	yan	PRJNA153427
+GSM1868823	Epi	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868822	Epi	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868821	Epi	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868819	Epi	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868820	Epi	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868818	Epi	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624228	Epi	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868817	Epi	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868810	PE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868811	PE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868812	PE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868813	PE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868814	PE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624232	PE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624222	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624223	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624224	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624225	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624226	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624227	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624229	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624230	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624231	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624233	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624234	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624235	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1624236	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868815	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+GSM1868816	TE	none	single_cell	paired_end	blakeley	PRJNA277181
+Naive_RNAseq_technicalReplicate1	WIBR3	5iLA	bulk	single_read	ji	PRJNA286204
+Naive_RNAseq_technicalReplicate2	WIBR3	5iLA	bulk	single_read	ji	PRJNA286204
+Primed_RNAseq_technicalReplicate1	WIBR3	KSR/FBS+FGF	bulk	single_read	ji	PRJNA286204
+Primed_RNAseq_technicalReplicate2	WIBR3	KSR/FBS+FGF	bulk	single_read	ji	PRJNA286204
+WAM464A9_S9	CH1	AI	single_cell	paired_end	wamaitha	This study
+WAM464A10_S10	CH1	AI	single_cell	paired_end	wamaitha	This study
+WAM464A11_S11	CH1	AI	single_cell	paired_end	wamaitha	This study
+WAM464A12_S12	CH1	AI	single_cell	paired_end	wamaitha	This study
+WAM464A13_S13	CH2	AI	single_cell	paired_end	wamaitha	This study
+WAM464A14_S14	CH2	AI	single_cell	paired_end	wamaitha	This study
+WAM464A15_S15	CH2	AI	single_cell	paired_end	wamaitha	This study
+WAM464A16_S16	CH2	AI	single_cell	paired_end	wamaitha	This study
+WAM528A11_S19	CH3	AI	single_cell	paired_end	wamaitha	This study
+WAM528A12_S20	CH3	AI	single_cell	paired_end	wamaitha	This study
+WAM528A13_S21	CH3	AI	single_cell	paired_end	wamaitha	This study
+WAM528A14_S22	CH3	AI	single_cell	paired_end	wamaitha	This study
+WAM528A15_S23	CH3	AI	single_cell	paired_end	wamaitha	This study
+WAM528A1_S17	H1	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A2_S28	H1	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A3_S30	H1	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A4_S31	H1	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A5_S32	H1	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM464A1_S1	H1	AI	single_cell	paired_end	wamaitha	This study
+WAM464A2_S2	H1	AI	single_cell	paired_end	wamaitha	This study
+WAM464A3_S3	H1	AI	single_cell	paired_end	wamaitha	This study
+WAM464A4_S4	H1	AI	single_cell	paired_end	wamaitha	This study
+WAM528A10_S18	H9	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A6_S33	H9	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A7_S34	H9	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A8_S35	H9	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A9_S36	H9	mTeSR1_laminin	single_cell	paired_end	wamaitha	This study
+WAM528A16_S24	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study
+WAM528A17_S25	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study
+WAM528A18_S26	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study
+WAM528A19_S27	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study
+WAM528A20_S29	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study
+WAM464A5_S5	H9	AI	single_cell	paired_end	wamaitha	This study
+WAM464A6_S6	H9	AI	single_cell	paired_end	wamaitha	This study
+WAM464A7_S7	H9	AI	single_cell	paired_end	wamaitha	This study
+WAM464A8_S8	H9	AI	single_cell	paired_end	wamaitha	This study
+WAM464A17_S17	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study
+WAM464A18_S18	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study
+WAM464A19_S19	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study
+WAM464A20_S20	H9	mTeSR1_matrigel	single_cell	paired_end	wamaitha	This study

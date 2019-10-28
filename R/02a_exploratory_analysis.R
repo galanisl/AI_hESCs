@@ -2,13 +2,20 @@ library(DESeq2)
 library(readr)
 library(dplyr)
 library(cowplot)
+<<<<<<< HEAD
 library(ggplot2)
+=======
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 source("utility_functions.R")
 
 # Data preparation --------------------------------------------------------
 
 # Load the count data
+<<<<<<< HEAD
 load("results/hesc_all.RData")
+=======
+load("results/hesc.RData")
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 # Read in the sample aliases and arrange to match the count matrix column order
 stype <- read_tsv("all_samples.tsv")
@@ -24,17 +31,28 @@ stype <- stype %>%
                                          "TE  (Blakeley et al.)",
                                          "CH1 AI (Wamaitha et al.)",
                                          "CH2 AI (Wamaitha et al.)",
+<<<<<<< HEAD
                                          "CH3 AI (Wamaitha et al.)",
                                          "H1 AI (Wamaitha et al.)",
                                          "H9 AI (Wamaitha et al.)",
                                          "H9 mTeSR1_matrigel (Wamaitha et al.)",
                                          "H1 mTeSR1_laminin (Wamaitha et al.)",
                                          "H9 mTeSR1_laminin (Wamaitha et al.)",
+=======
+                                         "H1 AI (Wamaitha et al.)",
+                                         "H9 AI (Wamaitha et al.)",
+                                         "H1 mTeSR1 (Chan et al.)",
+                                         "H9 mTeSR1 (Wamaitha et al.)",
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
                                          "Derived_p0 KSR/FBS+FGF (Yan et al.)",
                                          "Derived_p10 KSR/FBS+FGF+L (Yan et al.)",
                                          "WIBR3 KSR/FBS+FGF (Ji et al.)",
                                          "H9 KSR/FGF (Takashima et al.)",
                                          "Shef6 KSR/FGF (Guo et al.)",
+<<<<<<< HEAD
+=======
+                                         "H1 3iL (Chan et al.)",
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
                                          "WIBR3 5iLA (Ji et al.)",
                                          "H9 t2iL+Go (Guo et al.)",
                                          "H9 t2iL+Go (Takashima et al.)",
@@ -55,10 +73,16 @@ stype <- stype %>%
 col_pal <- c("#7fbc41", "#7fbc41", "#7fbc41", #Epi
              "#6a51a3", "#6a51a3", #PE
              "#C19A6B", #TE
+<<<<<<< HEAD
              "#fe9929", "#fe9929", "#fe9929", "#d73027", "#d73027", #AI
              "#de75ae", #mTeSR1 matrigel
              "#c994c7", "#c994c7", #mTeSR1 laminin
              "#1f78b4", "#1f78b4", "#1f78b4", "#1f78b4", "#1f78b4", #KSR
+=======
+             "#d73027", "#d73027", "#d73027", "#d73027", #AI
+             "#de75ae", "#de75ae", #mTeSR1
+             "#1f78b4", "#1f78b4", "#1f78b4", "#1f78b4", "#1f78b4", "#9ecae1", #KSR
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
              "#737373", "#737373", "#737373", "#737373", 
              "#737373", "#737373", "#737373", "#737373", "#737373" #Naive
 )
@@ -66,15 +90,22 @@ col_pal <- c("#7fbc41", "#7fbc41", "#7fbc41", #Epi
 shape_pal <- c(16, 17, 15, #Epi
                16, 17, #PE
                16, #TE
+<<<<<<< HEAD
                16, 17, 8, 15, 18, #AI
                16, #mTeSR1 matrigel
                15, 18, #mTeSR1 laminin
                16, 16, 17, 15, 18, #KSR
+=======
+               16, 17, 15, 18, #AI
+               16, 17, #mTeSR1
+               16, 16, 17, 15, 18, 16, #KSR
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
                16, 17, 17, 15, 
                18, 18, 17, 15, 18 #Naive
 )
 
 # Putting all the data together
+<<<<<<< HEAD
 hesc$abundance <- hesc$abundance[, stype$sample_name]
 hesc$counts <- hesc$counts[, stype$sample_name]
 hesc$length <- hesc$length[, stype$sample_name]
@@ -89,6 +120,20 @@ ribo <- read_tsv("data/ribosomal.txt")
 dds <- dds[!(rownames(dds) %in% ribo$`Approved Symbol`), ]
 
 load("data/t2g_complete.RData")
+=======
+dds <- DESeqDataSetFromTximport(txi = hesc, colData = stype, 
+                                design = ~ exp_group)
+
+# Removal of mitochondrial-, ribosomal- and pseudo-genes.
+# The reference files are in folder 'report' on GitHub
+mito <- grep("^MT-", rownames(dds))
+dds <- dds[-mito, ]
+
+ribo <- read_tsv("ref_transcriptome/ribosomal.txt")
+dds <- dds[!(rownames(dds) %in% ribo$`Approved Symbol`), ]
+
+load("ref_transcriptome/t2g_complete.RData")
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 pseudo <- t2g[grep("pseudogene", t2g$gene_biotype), ]
 dds <- dds[!(rownames(dds) %in% pseudo$symbol), ]
 
@@ -128,10 +173,29 @@ pairs(pca_wbe$ind$coord, col = factor(stype$rna_seq),
 legend("right", fill = unique(factor(stype$rna_seq)), 
        legend = unique(stype$rna_seq))
 
+<<<<<<< HEAD
 # Batch effect removal ----------------------------------------------------
 
 # Removal of batch effects
 sf <- limma::removeBatchEffect(sf, batch = stype$rna_seq)
+=======
+# Pairs plot coloured by technology
+pairs(pca_wbe$ind$coord, col = factor(stype$technology), 
+      main = paste0("Before batch effect removal (n = ", 
+                    nrow(pca_wbe$var$coord), ", adjusted P = ", pval, ")"), 
+      pch = 16, oma = c(3, 3, 7, 15), cex = 0.7)
+legend("right", fill = unique(factor(stype$technology)), 
+       legend = unique(stype$technology))
+
+plot_pca(pca_wbe, stype$sample_type, 1, 2, pval, col_pal, shape_pal, 
+         "Before batch effect removal")
+
+# Batch effect removal ----------------------------------------------------
+
+# Removal of batch effects
+sf <- limma::removeBatchEffect(sf, batch = stype$technology, 
+                               batch2 = stype$rna_seq)
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 pca_nbe <- perform_pca(sf, pval = pval, top_pc = 5)
 colnames(pca_nbe$ind$coord) <- paste0("PC", 1:5)
@@ -144,17 +208,38 @@ pairs(pca_nbe$ind$coord, col = factor(stype$rna_seq),
 legend("right", fill = unique(factor(stype$rna_seq)), 
        legend = unique(stype$rna_seq))
 
+<<<<<<< HEAD
 p <- list()
 p[[1]] <- plot_pca(pca_nbe, stype$sample_type, 1, 2, pval, col_pal, shape_pal,
                    "After batch effect removal") + theme(legend.position = "none")
 p[[2]] <- NULL
+=======
+# Pairs plot coloured by technology
+pairs(pca_nbe$ind$coord, col = factor(stype$technology), 
+      main = paste0("After batch effect removal (n = ", 
+                    nrow(pca_nbe$var$coord), ", adjusted P = ", pval, ")"), 
+      pch = 16, oma = c(3, 3, 7, 15), cex = 0.7)
+legend("right", fill = unique(factor(stype$technology)), 
+       legend = unique(stype$technology))
+
+p <- list()
+p[[1]] <- plot_pca(pca_nbe, stype$sample_type, 1, 2, pval, col_pal, shape_pal,
+                   "After batch effect removal") + theme(legend.position = "none")
+p[[2]] <- ggplot()
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 p[[3]] <- plot_pca(pca_nbe, stype$sample_type, 1, 3, pval, col_pal, shape_pal,
                    "After batch effect removal") + theme(legend.position = "none")
 p[[4]] <- plot_pca(pca_nbe, stype$sample_type, 2, 3, pval, col_pal, shape_pal,
                    "After batch effect removal") + theme(legend.position = "none")
+<<<<<<< HEAD
 plot_grid(plotlist = p, nrow = 2, ncol = 2, align = "hv")
 
 save(pca_wbe, pca_nbe, col_pal, shape_pal, pval, file = "results/pca_sfn.RData")
+=======
+plot_grid(plotlist = p, nrow = 2, ncol = 2)
+
+save(pca_wbe, pca_nbe, col_pal, file = "results/pca_sfn.RData")
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 save(dds, sf, file = "results/raw_norm_DESeq_sfn.RData")
 
 # 3D PCA ------------------------------------------------------------------
@@ -190,7 +275,11 @@ mat <- t(sf[idx,])
 
 kl_div <- Inf
 for(i in 1:100){
+<<<<<<< HEAD
   ts <- Rtsne(mat, dims = 3, perplexity = 30)
+=======
+  ts <- Rtsne(mat, dims = 3, perplexity = 10)
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
   if(min(ts$itercosts) < kl_div){
     kl_div <- min(ts$itercosts)
     tsf <- ts
@@ -201,14 +290,23 @@ p <- list()
 p[[1]] <- plot_tsne(tsf, stype$sample_type, d1 = 1, d2 = 2, pval = pval, ntop, 
                     col_pal, shape_pal, "After batch effect removal") + 
   theme(legend.position = "none")
+<<<<<<< HEAD
 p[[2]] <- NULL
+=======
+p[[2]] <- ggplot()
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 p[[3]] <- plot_tsne(tsf, stype$sample_type, d1 = 1, d2 = 3, pval = pval, ntop, 
                     col_pal, shape_pal, "After batch effect removal") + 
   theme(legend.position = "none")
 p[[4]] <- plot_tsne(tsf, stype$sample_type, d1 = 2, d2 = 3, pval = pval, ntop, 
                     col_pal, shape_pal, "After batch effect removal") + 
   theme(legend.position = "none")
+<<<<<<< HEAD
 plot_grid(plotlist = p, nrow = 2, ncol = 2, align = "hv")
+=======
+
+plot_grid(plotlist = p, nrow = 2, ncol = 2)
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 res_ts <- tibble(x = tsf$Y[, 1], y = tsf$Y[, 2], z = tsf$Y[, 3],
                  cond = stype$sample_type)
@@ -222,6 +320,7 @@ plot_ly(res_ts, x = ~x, y = ~y, z = ~z, color = ~cond, marker = list(size = 5),
                       yaxis = list(title = "t-SNE2"),
                       zaxis = list(title = "t-SNE3")))
 
+<<<<<<< HEAD
 save(tsf, res_ts, col_pal, shape_pal, pval, ntop, file = "results/tsne_sfn.RData")
 var_genes <- colnames(mat)
 save(var_genes, file = "results/var_genes.RData")
@@ -246,3 +345,9 @@ plot_grid(plotlist = p, nrow = 2, ncol = 2, align = "hv")
 
 save(usf, col_pal, shape_pal, ntop, pval, file = "results/umap_sfn.RData")
 
+=======
+save(tsf, res_ts, col_pal, file = "results/tsne_sfn.RData")
+var_genes <- colnames(mat)
+save(var_genes, file = "results/var_genes.RData")
+
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04

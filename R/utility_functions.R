@@ -16,8 +16,15 @@ perform_pca <- function(X, pval = 0.001, top_pc = 5){
 }
 
 # Plot 2D PCA for the given pca object, the given components pc1, pc2, and the
+<<<<<<< HEAD
 # given colour palette and title. Points are coloured by condition cond.
 plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, shape_pal, ptitle){
+=======
+# given colour palette, shape palette and title. Points are coloured by 
+# condition cond.
+plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, 
+                     shape_pal, ptitle){
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
   
   res <- tibble(x = pca$ind$coord[, pc1], y = pca$ind$coord[, pc2], 
                 cond = cond)
@@ -28,35 +35,59 @@ plot_pca <- function(pca, cond, pc1 = 1, pc2 = 2, pval = 0.001, col_pal, shape_p
   p_pca <- ggplot(res, aes(x, y, colour = cond, shape = cond)) + 
     geom_point(size = 2.5) +
     scale_colour_manual(values = col_pal) + 
+<<<<<<< HEAD
     scale_shape_manual(values = shape_pal) + 
+=======
+    scale_shape_manual(values = shape_pal) +
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
     labs(x = paste0("PC", pc1, " (", pc1_var, "%)"), 
          y = paste0("PC", pc2, " (", pc2_var, "%)"),
          title = paste0(ptitle, " (n = ", nrow(pca$var$coord),
                         ", adjusted P = ", pval, ")"), 
+<<<<<<< HEAD
          colour = "", shape = "") + 
+=======
+         colour = "") + 
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
     theme_bw(base_size = 15)
   return(p_pca)
 }
 
 # Plot 2D t-SNE for the given t-SNE object, the given dimensions d1, d2, and the
+<<<<<<< HEAD
 # given colour palette and title. Points are coloured by condition cond.
 plot_tsne <- function(tsf, cond, d1 = 1, d2 = 2, pval = 0.001, ntop, col_pal, shape_pal, ptitle){
+=======
+# given colour palette, shape palette and title. Points are coloured by 
+# condition cond.
+plot_tsne <- function(tsf, cond, d1 = 1, d2 = 2, pval = 0.001, ntop, col_pal, 
+                      shape_pal, ptitle){
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
   
   res_ts <- tibble(x = tsf$Y[, d1], y = tsf$Y[, d2], cond = cond)
   
   p_tsne <- ggplot(res_ts, aes(x, y, colour = cond, shape = cond)) + 
     geom_point(size = 2.5) +
     scale_colour_manual(values = col_pal) + 
+<<<<<<< HEAD
     scale_shape_manual(values = shape_pal) + 
+=======
+    scale_shape_manual(values = shape_pal) +
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
     labs(x = paste0("t-SNE", d1), 
          y = paste0("t-SNE", d2), 
          title = paste0("After batch effect removal (n = ", ntop, 
                         ", adjusted P = ", pval, ", 100 runs)"), 
+<<<<<<< HEAD
          colour = "", shape = "") + 
+=======
+         colour = "") + 
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
     theme_bw(base_size = 15)
   return(p_tsne)
 }
 
+<<<<<<< HEAD
 # Plot 2D UMAP for the given UMAP object, the given dimensions d1, d2, and the
 # given colour palette and title. Points are coloured by condition cond.
 plot_umap <- function(usf, cond, d1 = 1, d2 = 2, ntop, col_pal, shape_pal, ptitle){
@@ -76,6 +107,8 @@ plot_umap <- function(usf, cond, d1 = 1, d2 = 2, ntop, col_pal, shape_pal, ptitl
 }
 
 
+=======
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 # Check how the most informative genes map onto PC1 and PC2
 plot_bi <- function(pca, cond, pc1 = 1, pc2 = 2, top_genes = 100,
                     pval = 0.001, col_pal, ptitle){
@@ -167,7 +200,11 @@ DESeqRes2tibble <- function(dres){
                lfcSE = dres$lfcSE, stat = dres$stat) %>% 
     arrange(desc(log2FoldChange), padj)
   
+<<<<<<< HEAD
   return(tb)
+=======
+ return(tb)
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 }
 
 # Volcano plot from DESeqResults converted to tibble

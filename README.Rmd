@@ -14,7 +14,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Description of the project
 
+<<<<<<< HEAD
 This project had three main goals:
+=======
+This project had four main goals:
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 1. Integration of publicly available RNA-seq data sets profiling the 
 transcriptome of human embryonic stem cells (hESCs) maintained under different 
@@ -23,7 +27,14 @@ endoderm (PE) and Trophectoderm (TE).
 2. Comparison between the gene expression profiles of all these different cell 
 types in order to identify clusters grouping similar samples.
 3. Differential expression analysis contrasting the different culture conditions
+<<<<<<< HEAD
 to identify up- and down-regulated genes.
+=======
+with the Epi to identify up- and down-regulated genes.
+4. Exploration of the protein-protein interaction (PPI) network around up- and 
+down-regulated gene products and analysis of the biological processes in which 
+they are involved.
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 ## Pre-requisites
 
@@ -48,6 +59,10 @@ packages:
     + FactoMineR v1.41
     + Rtsne v0.13
     + plotly v4.8.0
+<<<<<<< HEAD
+=======
+    + igraph v1.2.2
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 - Other
     + Trim Galore! v0.5.0
     + salmon v0.11.3
@@ -165,8 +180,13 @@ all sample data into a single expression table with `tximport` (see
 `01b_gene_level_counts.R` at https://github.com/galanisl/AI_hESCs) [@tximport].
 
 The output of this section was a `tximport` list with three matrices summarising
+<<<<<<< HEAD
 abundances (TPM normalised counts), counts and transcript lengths to the 
 gene-level for all samples in Table 1 (**GOAL 1**).
+=======
+abundances, counts and transcript lengths to the gene-level for all samples in 
+Table 1 (**GOAL 1**).
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 ## Dimensionality reduction of the gene expression matrix
 
@@ -198,6 +218,7 @@ normalised data, we assumed that the trend fitted to the mean-variance curve
 shown in Figure 2 represents the technical component of the variance. Expression
 values that significantly deviate from this reference correspond to HVGs 
 [@scran]. The application of functions `trendVar()` and `decomposeVar()` from 
+<<<<<<< HEAD
 `scran` [@scran] led us to 3398 HVGs at the significance level $\alpha = 0.01$ 
 after Benjamini-Hochberg correction.
 
@@ -218,11 +239,45 @@ data was successfully adjusted.
 ![**Figure 4.** First 5 principal components showing that the batch effect introduced by the type of RNA-seq was successfully removed by `limma::removeBatchEffect()`.](report/figs/pca_nbe.png)
 
 Figure 5 shows the relationships between samples as captured by the three first
+=======
+`scran` [@scran] led us to 3312 HVGs at the significance level $\alpha = 0.01$ 
+after Benjamini-Hochberg correction.
+
+Principal Component Analysis (PCA) of the normalised samples revealed two 
+strong confounding factors related to the RNA-seq technology and layout used by 
+each study. Figure 3 shows how the second principal component (PC2) captures 
+whether the samples were sequenced in bulk or at the single cell level. Figure 4 
+highlights that PC5 splits the samples by RNA-seq layout (single-read or 
+paired-end).
+
+![**Figure 3.** First 5 principal components showing the relationship between samples (see Table 1) and the type of RNA-seq used to sequence them.](report/figs/pca_wbe1.png)
+
+
+![**Figure 4.** First 5 principal components showing the relationship between samples (see Table 1) and the RNA-seq layout used to sequence them.](report/figs/pca_wbe2.png)
+
+To remove these confounding factors from our data, we employed `limma`'s 
+`removeBatchEffect()` function [@limma]. The application of functions 
+`trendVar()` and `decomposeVar()` from `scran` [@scran] to the corrected data 
+led us to 3553 HVGs at the significance level $\alpha = 0.01$ 
+after Benjamini-Hochberg correction. The PCAs of Figures 5 and 6 show how the 
+data was successfully adjusted.
+
+![**Figure 5.** First 5 principal components showing that the batch effect introduced by the type of RNA-seq was successfully removed by `limma::removeBatchEffect()`.](report/figs/pca_nbe1.png)
+
+
+![**Figure 6.** First 5 principal components showing that the batch effect introduced by the RNA-seq layout was successfully removed by `limma::removeBatchEffect()`.](report/figs/pca_nbe2.png)
+
+Figure 7 shows the relationships between samples as captured by the three first
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 principal components. This plot highlights that, in general, samples cluster by 
 culture medium. Also, hESCs culture in t2iL+Go media are the most similar to the
 Epi samples. 
 
+<<<<<<< HEAD
 ![**Figure 5.** PCA of all considered samples (see Table 1) using only HVGs.](report/figs/pca_all.png)
+=======
+![**Figure 7.** PCA of all considered samples (see Table 1) using only HVGs.](report/figs/pca_all.png)
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 To explore whether there are non-linear relationships between samples not
 captured by PCA, we embedded our gene expression data to three-dimensional space 
@@ -233,6 +288,7 @@ consequence, we ran t-SNE 100 times with the same parameters and selected the
 visualisation with the lowest Kullback-Leibler divergence (i.e. the lowest value 
 of the objective function).
 
+<<<<<<< HEAD
 In Figure 6, we can see that t-SNE stresses the differences between blastocyst 
 samples (Epi, PE and TE) as well as hESCs cultured in AI, KSR/FGF and mTeSR1 
 media.
@@ -244,10 +300,18 @@ data: the uniform manifold approximation and projection (UMAP) [@UMAP]. Figure 7
 shows that it agrees with the results from t-SNE.
 
 ![**Figure 7.** UMAP of all considered samples (see Table 1) using only the $n$ most variable genes. This plot corresponds to a run with $k = 15$ nearest neighbours in the initial proximity graph.](report/figs/umap_all.png)
+=======
+In Figure 8, we can see that t-SNE stresses the differences between blastocyst 
+samples (Epi, PE and TE) as well as hESCs cultured in AI, KSR/FGF and mTeSR1 
+media.
+
+![**Figure 8.** t-SNE of all considered samples (see Table 1) using only the $n$ most variable genes. This plot corresponds to the run with the lowest Kullback-Leibler divergence out of 100.](report/figs/tsne_all.png)
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 For more details about the methodology used throughout this section, see 
 `02a_exploratory_analysis.R` at https://github.com/galanisl/AI_hESCs.
 
+<<<<<<< HEAD
 The results of Figures 5-7 are complementary and give a good indication of 
 how similar samples group together in our data. Nevertheless, they also reveal
 that there might be latent sources of variation between samples that are not 
@@ -257,6 +321,17 @@ For this reason, we decided to use [griph](https://github.com/ppapasaikas/griph)
 a tool to automatically identify clusters of cell types even in the presence of 
 confounding factors that are difficult to control for (e.g. cell cycle stage or 
 batch effects).
+=======
+The results of Figures 7 and 8 are complementary and give a good indication of 
+how similar samples group together in our data. Nevertheless, they also reveal
+that there might be latent sources of variation between samples that are not 
+being accounted for. For example, even though Epi samples are supposed to
+exhibit very similar transcriptomes, they show a substantial level of dispersion
+both in the PCA and t-SNE plots. For this reason, we decided to use 
+[griph](https://github.com/ppapasaikas/griph), a tool to automatically identify
+clusters of cell types even in the presence of confounding factors that are 
+difficult to control (e.g. cell cycle stage or batch effects).
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 griph uses an ensemble of dissimilarity measures between samples to construct
 a graph in which only very similar nodes are connected with each other. Then, 
@@ -264,12 +339,21 @@ it applies a community detection algorithm to unsupervisedly spot groups of
 highly connected nodes that are linked to other groups by only a few edges 
 [@comm_detection].
 
+<<<<<<< HEAD
 In Figure 8, we see that griph is able to remove strong technical differences
 between samples (especially evident in Epi, PE and TE samples) that neither PCA 
 nor t-SNE nor UMAP could detect (**GOAL 2**). For more details see 
 `02b_cluster_with_griph.R` at https://github.com/galanisl/AI_hESCs.
 
 ![**Figure 8.** Clusters detected by griph.](report/figs/griph_all.png)
+=======
+In Figure 9, we see that griph is able to remove strong technical differences
+between samples (especially evident in Epi, PE and TE samples) that neither PCA 
+nor t-SNE could detect (**GOAL 2**). For more details see 
+`02b_cluster_with_griph.R` at https://github.com/galanisl/AI_hESCs.
+
+![**Figure 9.** Clusters detected by griph.](report/figs/griph_all.png)
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 
 ## Differential expression analysis
 
@@ -277,9 +361,14 @@ With griph's clusters as a reference, we performed differential expression
 analysis using `DESeq2` for the following contrasts:
 
 - hESCs cultured in AI medium vs Epi
+<<<<<<< HEAD
 - hESCs cultured in KSR/FGF medium vs Epi
 - hESCs cultured in mTeSR1 medium (laminin) vs Epi
 - hESCs cultured in mTeSR1 medium (matrigel) vs Epi
+=======
+- hESCs cultured in KSR and 3iL media vs Epi
+- hESCs cultured in mTeSR1 medium vs Epi
+>>>>>>> 4cab0b77e62cced71c7460c1a0d9f17c9751de04
 - hESCs cultured in t2iL+GO and 5iLA media vs Epi
 
 Genes with log2-fold-changes in expression $\geq 1$ or $\leq -1$ and adjusted 
